@@ -1,0 +1,51 @@
+/*Custom CSS
+File Name - app.css
+Student Name - VinayKumar Mannem
+Student Id - 301211306
+Date - 20-10-2021
+ */
+.bg-dark {
+background-color: #245e97 !important;
+}
+
+#login {
+border: white;
+border-style: groove;
+}
+
+.jumbotron {
+    padding: 2rem;
+}
+
+.jumbotron .bg{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("/assets/images/me.jpg");
+    opacity: .4;
+    width: 100%;
+    height: 100%;
+} 
+
+img {
+    border-radius: 50%;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .grid-item {
+    
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  #projects img {
+    width: 200 px !important;
+    border-radius: 0%;
+  }

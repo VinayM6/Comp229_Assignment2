@@ -1,0 +1,48 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Main Content -->
+<main class="container">
+  <div class="row">
+    <div class="offset-md-1 col-md-10">
+      <h1><%= title %></h1>
+
+      <% if(typeof displayName == 'string' && displayName) { %>
+        <a href="/user-list/add" class="btn btn-primary" role="button">
+          <i class="fas fa-plus-circle"></i> Add a User
+        </a>
+      <% } %>
+      <br>
+      <table class="table table-bordered table-striped table-hover">
+        <!-- Header Row-->
+        <tr class="d-flex">
+          <th class="text-center col-3">Contact Name</th>
+          <th class="text-center col-2">Contact Number</th>
+          <th class="text-center col-3">Email Address</th>
+          <th class="text-center col-4">Action</th>
+        </tr>
+
+        <!-- Repeatable Template Row based on collection data from DB -->
+
+        <% for(let count = 0; count < UserList.length; count++) { %>
+        <tr class="d-flex">
+          <td class="text-center col-3"><%= UserList[count].name %></td>
+          <td class="text-center col-2"><%= UserList[count].phone %></td>
+          <td class="text-center col-3"><%= UserList[count].email %></td>
+          <td class="text-center col-4">
+            <a href="/user-list/edit/<%= UserList[count]._id %>" class="btn btn-primary btn-sm">
+              <i class="fas fa-pencil-alt"></i> Edit</a> &nbsp;
+            <a href="/user-list/delete/<%= UserList[count]._id %>" class="btn btn-danger btn-sm">
+              <i class="fas fa-trash-alt"></i> Delete</a>
+          </td>
+        </tr>
+        <% } %>
+      </table>
+    </div>
+  </div>
+</main>
+
+<%- include ../partials/bottom_nav.ejs %>
+
+<%- include ../partials/footer.ejs %>
